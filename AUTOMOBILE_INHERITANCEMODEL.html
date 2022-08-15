@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>AUTOMOBILE INHERITANCE MODEL</h1>
+</body>
+<script>
+    class Car {
+  constructor(name) {
+    this.name = name;
+    this.speed = 0;
+  }
+  drive(speed) {
+    this.speed += speed;
+    console.log(`${this.name} drives with speed ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+    console.log(`${this.name} stands still.`);
+  }
+}
+let car = new Car("My Car");
+
+class MyCar extends Car {
+  parked() {
+    console.log(`${this.name} is parked!`);
+  }
+}
+let mycar = new MyCar("MyCar is Black");
+mycar.drive(60); // MyCar drives with speed 60.
+mycar.parked();
+</script>
+</html>
